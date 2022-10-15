@@ -1,7 +1,15 @@
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Dashboard from "./pages/Dashboard";
+
 function App() {
   return (
     <div className="App">
-      <header className="App-header"></header>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/dashboard/:id" element={<Dashboard />}></Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

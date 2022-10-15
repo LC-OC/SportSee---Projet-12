@@ -1,0 +1,13 @@
+.nav-left {
+    background-color: $secondary-color;
+    width: 117px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    .copyright {
+        color: white;
+        font-family: Roboto;
+        font-size: 12px;
+    }
+}

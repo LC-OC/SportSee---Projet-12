@@ -1,0 +1,13 @@
+.hello_user {
+    font-family: Roboto;
+    color: $secondary-color;
+    h1 {
+        font-size: 35px;
+        .name_user {
+            color: $primary-color;
+        }
+    }
+    p {
+        font-size: 20px;
+    }
+}

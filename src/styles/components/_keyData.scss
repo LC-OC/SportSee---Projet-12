@@ -1,0 +1,15 @@
+.keyData_container {
+    color:  $secondary_color;
+    font-family: Roboto;
+    div {
+        background-color: #FBFBFB;
+        width: 258px;
+        display: flex;
+        align-items: center;
+        height: 124px;
+        .keyData_infos {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
