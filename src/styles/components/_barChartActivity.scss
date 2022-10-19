@@ -1,0 +1,19 @@
+.activity-container {
+    width: 835px;
+    height: 320px;
+    .custom_tooltip {
+        background-color: #E60000;
+        height: 5rem;
+        border: none;
+        width: 3rem;
+        text-align: center;
+        font-family: Roboto;
+        padding: 0.5rem;
+        margin: 2rem;
+        color: white;
+        font-size: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}

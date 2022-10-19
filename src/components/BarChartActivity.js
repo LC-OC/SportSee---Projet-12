@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { BarChart } from "recharts";
+import { ResponsiveContainer, BarChart, YAxis } from "recharts";
 import { CartesianGrid } from "recharts";
 import { XAxis } from "recharts";
 import { Tooltip } from "recharts";
@@ -28,30 +28,55 @@ const BarChartActivity = () => {
       );
     }
   };
+
   return (
-    <div>
-      <BarChart width={730} height={250} data={userActivity.sessions}>
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="day" />
-        <Tooltip content={<CustomToolTip />} />
-        <Legend />
-        <Bar
-          dataKey="kilogram"
-          fill="#282D30"
-          name="Poids"
-          legendType={"circle"}
-          barSize={10}
-          radius={[10, 10, 0, 0]}
-        />
-        <Bar
-          dataKey="calories"
-          fill="#E60000"
-          name="Calories brûlées"
-          legendType={"circle"}
-          barSize={10}
-          radius={[10, 10, 0, 0]}
-        />
-      </BarChart>
+    <div className="activity-container">
+      <ResponsiveContainer width="100%" height="100%">
+        <BarChart
+          data={userActivity.sessions}
+          width={730}
+          height={250}
+          barGap={8}
+          barSize={7}
+        >
+          <CartesianGrid strokeDasharray="3 3" vertical={false} />
+          <YAxis
+            orientation="right"
+            dataKey="kilogram"
+            yAxisId="kilogram"
+            axisLine={false}
+            tickLine={false}
+            tickCount={3}
+            domain={["dataMin-1", "dataMax+2"]}
+            allowDecimals={false}
+          />
+
+          <YAxis dataKey="calories" hide={true} />
+          <XAxis
+            domain={["minData", "maxData"]}
+            tickFormatter={(number) => number + 1}
+            tickLine={false}
+          />
+          <Tooltip className="tooltip" content={<CustomToolTip />} />
+          <Legend />
+          <Bar
+            dataKey="kilogram"
+            fill="#282D30"
+            name="Poids (Kg)"
+            legendType={"circle"}
+            maxBarSize={8}
+            radius={[10, 10, 0, 0]}
+          />
+          <Bar
+            dataKey="calories"
+            fill="#E60000"
+            name="Calories brûlées (Kcal)"
+            legendType={"circle"}
+            maxBarSize={8}
+            radius={[10, 10, 0, 0]}
+          />
+        </BarChart>
+      </ResponsiveContainer>
     </div>
   );
 };

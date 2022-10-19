@@ -30,7 +30,7 @@ const KeyData = ({ keyData }) => {
       </div>
       <div className="fat">
         <img src={fatIcon} alt="" />
-        <div className="key_data_infos">
+        <div className="keyData_infos">
           <p>{keyData?.lipidCount}g</p>
           <p>Lipides</p>
         </div>

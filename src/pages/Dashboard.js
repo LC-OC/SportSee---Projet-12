@@ -20,6 +20,7 @@ const Dashboard = () => {
     };
     fetchUserMainData();
   }, [id]);
+
   return (
     <div>
       <Header />
