@@ -1,6 +1,29 @@
 .activity-container {
     width: 835px;
     height: 320px;
+    margin: 4rem 0;
+    font-family: roboto;
+    background-color: #FBFBFB;
+    border-radius: 5px;
+    .title_legend {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin: 1rem 2rem 2rem 2rem ;
+        
+        h2 {
+            font-size: 15px;
+            font-weight: 500;
+        }
+        p {
+            color: #74798C;
+            font-size: 14px;
+            img {
+                margin-right: 1rem;
+            }
+        }
+    }
     .custom_tooltip {
         background-color: #E60000;
         height: 5rem;

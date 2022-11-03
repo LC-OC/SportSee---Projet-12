@@ -2,7 +2,7 @@ import React from "react";
 import bikeIcon from "../assets/bikeIcon.svg";
 import natationIcon from "../assets/natationIcon.svg";
 import haltereIcon from "../assets/haltereIcon.svg";
-import yogaIcon from "../assets/bikeIcon.svg";
+import yogaIcon from "../assets/yogaIcon.svg";
 
 const NavLeft = () => {
   return (

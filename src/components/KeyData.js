@@ -3,40 +3,49 @@ import caloriesIcon from "../assets/caloriesIcon.svg";
 import proteinesIcon from "../assets/proteinesIcon.svg";
 import glucidesIcon from "../assets/glucidesIcon.svg";
 import fatIcon from "../assets/fatIcon.svg";
+import PropTypes from "prop-types";
 
 const KeyData = ({ keyData }) => {
   return (
     <div className="keyData_container">
-      <div className="calories">
+      <div className="calories keyData_element">
         <img src={caloriesIcon} alt="" />
         <div className="keyData_infos">
-          <p>{keyData?.calorieCount}kCal</p>
-          <p>Calories</p>
+          <p className="keyData">{keyData.calorieCount}kCal</p>
+          <p className="keyData_type">Calories</p>
         </div>
       </div>
-      <div className="proteines">
+      <div className="proteines keyData_element">
         <img src={proteinesIcon} alt="" />
-        <div className="keyData_infos">
-          <p>{keyData?.proteinCount}g</p>
-          <p>Protéines</p>
+        <div className="keyData_infos ">
+          <p className="keyData">{keyData.proteinCount}g</p>
+          <p className="keyData_type">Protéines</p>
         </div>
       </div>
-      <div className="glucides">
+      <div className="glucides keyData_element">
         <img src={glucidesIcon} alt="" />
         <div className="keyData_infos">
-          <p>{keyData?.carbohydrateCount}g</p>
-          <p>Glucides</p>
+          <p className="keyData">{keyData.carbohydrateCount}g</p>
+          <p className="keyData_type">Glucides</p>
         </div>
       </div>
-      <div className="fat">
+      <div className="fat keyData_element">
         <img src={fatIcon} alt="" />
         <div className="keyData_infos">
-          <p>{keyData?.lipidCount}g</p>
-          <p>Lipides</p>
+          <p className="keyData">{keyData.lipidCount}g</p>
+          <p className="keyData_type">Lipides</p>
         </div>
       </div>
     </div>
   );
+};
+
+KeyData.propTypes = {
+  keyData: PropTypes.object,
+  calorieCount: PropTypes.number,
+  proteinCount: PropTypes.number,
+  carbohydrateCount: PropTypes.number,
+  lipidCount: PropTypes.number,
 };
 
 export default KeyData;

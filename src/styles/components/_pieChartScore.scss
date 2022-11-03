@@ -1,0 +1,31 @@
+.score_container {
+    background-color: #FBFBFB;
+    width: 263px;
+    height: 263px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-family: roboto;
+    h2 {
+        font-size: 15px;
+        color: #20253A;
+        margin: 1.5rem 0 0 2rem;
+    }
+    .legend_score {
+        position: absolute;
+        margin-top: 2.5rem;
+        margin-left: 5.3rem;
+        text-align: center;
+        width: 95px;
+        p {
+            color: #74798C;
+            font-size: 16px;       
+            font-weight: bold;
+         }
+        .pourcentage {
+            font-size: 26px;
+            color: #000000;
+            margin-bottom: -0.9rem;
+    }
+    }
+   
+}

@@ -1,0 +1,35 @@
+.body {
+    margin: 0px;
+  height: 100%;
+}
+
+.elements_container {
+    display: flex;
+    flex-direction: row;
+    .charts_container {
+        display: flex;
+        flex-direction: column;
+        margin-right: 3rem;
+        @media #{$large-screen} {
+            margin-right: 8rem;
+        }
+        .three_charts_container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+    
+}
+
+.containt_container {
+    margin-left: 10rem;
+    margin-top: 2rem;
+    height: 100%;
+    padding: 0 6rem;
+    @media #{$large-screen} {
+        margin-left: 12rem;
+        margin-top: 4rem;
+    }
+}
+

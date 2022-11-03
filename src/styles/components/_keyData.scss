@@ -1,15 +1,28 @@
 .keyData_container {
     color:  $secondary_color;
     font-family: Roboto;
-    div {
+    margin-top: 4rem;
+    .keyData_element {
         background-color: #FBFBFB;
         width: 258px;
-        display: flex;
-        align-items: center;
         height: 124px;
-        .keyData_infos {
-            display: flex;
-            flex-direction: column;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 3.2rem;
+        img {
+            height: 60px;
+            width: 60px;
+            padding: 0 2rem;
+        }
+        .keyData {
+            font-size:20px;
+            font-weight: bold;
+        }
+        .keyData_type {
+            font-size: 14px;
+            color: #74798C;
+            margin-top: -1rem;
         }
     }
 }

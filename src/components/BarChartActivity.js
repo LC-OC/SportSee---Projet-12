@@ -1,23 +1,18 @@
-import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { ResponsiveContainer, BarChart, YAxis } from "recharts";
-import { CartesianGrid } from "recharts";
-import { XAxis } from "recharts";
-import { Tooltip } from "recharts";
-import { Legend } from "recharts";
-import { Bar } from "recharts";
-import { getUserActivity } from "../utils/FetchData";
+import React from "react";
+import PropTypes from "prop-types";
+import {
+  ResponsiveContainer,
+  BarChart,
+  YAxis,
+  CartesianGrid,
+  XAxis,
+  Tooltip,
+  Bar,
+} from "recharts";
+import redDot from "../assets/redDot.svg";
+import blackDot from "../assets/blackDot.svg";
 
-const BarChartActivity = () => {
-  const { id } = useParams();
-  const [userActivity, setUserActivity] = useState([]);
-  useEffect(() => {
-    const fetchUserActivity = async () => {
-      const res = await getUserActivity(id);
-      setUserActivity(res.data);
-    };
-    fetchUserActivity();
-  }, [id]);
+const BarChartActivity = ({ activity }) => {
   const CustomToolTip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
@@ -31,15 +26,27 @@ const BarChartActivity = () => {
 
   return (
     <div className="activity-container">
-      <ResponsiveContainer width="100%" height="100%">
+      <div className="title_legend">
+        <h2>Activité quotidienne</h2>
+        <p>
+          <img src={blackDot} alt="" />
+          Poids (kg)
+        </p>
+        <p>
+          <img src={redDot} alt="" />
+          Calories brûlées (kCal)
+        </p>
+      </div>
+
+      <ResponsiveContainer width="100%" height="70%">
         <BarChart
-          data={userActivity.sessions}
-          width={730}
-          height={250}
+          data={activity.sessions}
           barGap={8}
           barSize={7}
+          fill="#FBFBFB"
+          margin={{ left: 50 }}
         >
-          <CartesianGrid strokeDasharray="3 3" vertical={false} />
+          <CartesianGrid strokeDasharray="3" vertical={false} />
           <YAxis
             orientation="right"
             dataKey="kilogram"
@@ -57,8 +64,12 @@ const BarChartActivity = () => {
             tickFormatter={(number) => number + 1}
             tickLine={false}
           />
-          <Tooltip className="tooltip" content={<CustomToolTip />} />
-          <Legend />
+          <Tooltip
+            className="tooltip"
+            content={<CustomToolTip />}
+            wrapperStyle={{ outline: "none" }}
+            cursor={{ fill: "rgba(196, 196, 196, 0.5)" }}
+          />
           <Bar
             dataKey="kilogram"
             fill="#282D30"
@@ -71,7 +82,6 @@ const BarChartActivity = () => {
             dataKey="calories"
             fill="#E60000"
             name="Calories brûlées (Kcal)"
-            legendType={"circle"}
             maxBarSize={8}
             radius={[10, 10, 0, 0]}
           />
@@ -79,6 +89,11 @@ const BarChartActivity = () => {
       </ResponsiveContainer>
     </div>
   );
+};
+
+BarChartActivity.propTypes = {
+  activity: PropTypes.object,
+  sessions: PropTypes.array,
 };
 
 export default BarChartActivity;

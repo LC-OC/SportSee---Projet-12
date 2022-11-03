@@ -1,2 +1,12 @@
 $primary-color: #FF0101;
 $secondary-color: #020203;
+
+// Media Size
+
+$large-screen: "screen and (min-width: 1604px)";
+
+// remove default margin body
+body {
+    margin:0;
+    padding:0
+}
