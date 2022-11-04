@@ -3,6 +3,12 @@ import Header from "../components/Header";
 import NavLeft from "../components/NavLeft";
 import { Link } from "react-router-dom";
 
+/**
+ * Display the 404 error page, with links to dashboard of user 12 and user 18
+ * @component
+ * @returns {React.ReactElement}
+ */
+
 const Error404 = () => {
   return (
     <div>

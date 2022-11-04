@@ -17,6 +17,12 @@ import PieChartScore from "../components/PieChartScore";
 import Error404 from "./Error404";
 import PropTypes from "prop-types";
 
+/**
+ * Display dashboard user
+ * @component
+ * @returns {React.ReactElement}
+ */
+
 const Dashboard = () => {
   const { id } = useParams();
   const [userData, setUserData] = useState([]);

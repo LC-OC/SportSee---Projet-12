@@ -4,6 +4,12 @@ import natationIcon from "../assets/natationIcon.svg";
 import haltereIcon from "../assets/haltereIcon.svg";
 import yogaIcon from "../assets/yogaIcon.svg";
 
+/**
+ * Display the sidebar on the left
+ * @component
+ * @returns {React.ReactElement}
+ */
+
 const NavLeft = () => {
   return (
     <div className="nav-left">

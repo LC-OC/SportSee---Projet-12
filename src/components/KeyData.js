@@ -5,6 +5,13 @@ import glucidesIcon from "../assets/glucidesIcon.svg";
 import fatIcon from "../assets/fatIcon.svg";
 import PropTypes from "prop-types";
 
+/**
+ * Display the KeyData (calories, proteines, glucides, fat)
+ * @component
+ * @param {object} keyData
+ * @returns {React.ReactElement}
+ */
+
 const KeyData = ({ keyData }) => {
   return (
     <div className="keyData_container">

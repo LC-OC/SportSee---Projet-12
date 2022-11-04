@@ -11,7 +11,19 @@ import {
 } from "recharts";
 import PropTypes from "prop-types";
 
+/**
+ * Display the LineChart
+ * @component
+ * @param {array} session
+ * @returns {React.ReactElement}
+ */
+
 const LineChartSession = ({ session }) => {
+  /**
+   * Display the new days format for the XAxis of the Chart
+   * @param {string} day
+   * @returns days with new format (letter to number)
+   */
   function newDayFormat(day) {
     if (day === 1) return "L";
     else if (day === 2) return "M";
@@ -22,6 +34,12 @@ const LineChartSession = ({ session }) => {
     else if (day === 7) return "D";
     return day;
   }
+  /**
+   *  Custom tooltip LineChart Session
+   * @param {boolean} active
+   * @param {array} payload
+   * @returns custom tooltip with value in minutes
+   */
   const CustomToolTip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
@@ -31,7 +49,12 @@ const LineChartSession = ({ session }) => {
       );
     }
   };
-  //test custom cursor
+
+  /**
+   *  Display a grey rectangle on hover
+   * @param {*} points
+   * @returns custom cursor
+   */
   const CustomCursor = ({ points }) => {
     return (
       <Rectangle

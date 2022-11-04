@@ -6,10 +6,19 @@ import {
   USER_PERFORMANCE,
 } from "./data";
 
-let mockTest = true;
+// For mocked data => mockData = true;
+// For API => mockData = false;
+let mockData = true;
+
+/**
+ * Fetch mocked data and API
+ * @async
+ * @param {number} id
+ * @returns {res}
+ */
 
 export const getUserMainData = async (id) => {
-  if (mockTest) {
+  if (mockData) {
     console.log("mock");
     try {
       const res = USER_MAIN_DATA.filter((data) => data.id === +id);
@@ -31,7 +40,7 @@ export const getUserMainData = async (id) => {
 };
 
 export const getUserActivity = async (id) => {
-  if (mockTest) {
+  if (mockData) {
     try {
       const res = USER_ACTIVITY.filter((data) => data.userId === +id);
       return {
@@ -52,7 +61,7 @@ export const getUserActivity = async (id) => {
 };
 
 export const getUserAverageSession = async (id) => {
-  if (mockTest) {
+  if (mockData) {
     console.log("mock");
     try {
       const res = USER_AVERAGE_SESSIONS.filter((data) => data.userId === +id);
@@ -76,7 +85,7 @@ export const getUserAverageSession = async (id) => {
 };
 
 export const getUserPeformance = async (id) => {
-  if (mockTest) {
+  if (mockData) {
     console.log("mock");
     try {
       const res = USER_PERFORMANCE.filter((data) => data.userId === +id);

@@ -9,7 +9,18 @@ import {
 } from "recharts";
 import PropTypes from "prop-types";
 
+/**
+ * Display the BarChart
+ * @component
+ * @param {array} performance
+ * @returns {React.ReactElement}
+ */
 const RadarChartPerformance = ({ performance }) => {
+  /**
+   * Display the new days format for the PolarAngleAxis of the Chart
+   * @param {number} kind
+   * @returns performance with new format (number to string)
+   */
   function newPerformanceFormat(kind) {
     if (kind === 1) return "Cardio";
     else if (kind === 2) return "Energie";

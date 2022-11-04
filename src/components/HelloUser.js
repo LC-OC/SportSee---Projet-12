@@ -1,6 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+/**
+ * Display name user on the Dashboard
+ * @component
+ * @param {object} infosUser
+ * @returns {React.ReactElement}
+ */
+
 const HelloUser = ({ infosUser }) => {
   return (
     <div className="hello_user">

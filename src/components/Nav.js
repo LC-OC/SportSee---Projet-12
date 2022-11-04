@@ -1,5 +1,11 @@
 import React from "react";
 
+/**
+ * Display the navbar
+ * @component
+ * @returns {React.ReactElement}
+ */
+
 const Nav = () => {
   return (
     <div className="nav">

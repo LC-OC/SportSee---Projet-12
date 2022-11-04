@@ -2,6 +2,12 @@ import React from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import PropTypes from "prop-types";
 
+/**
+ * Display the BarChart
+ * @component
+ * @param {object} scoreData
+ * @returns {React.ReactElement}
+ */
 const PieChartScore = ({ scoreData }) => {
   const score = scoreData.score || scoreData.todayScore;
   const scorePourcentage = [

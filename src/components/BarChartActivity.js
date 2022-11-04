@@ -12,7 +12,20 @@ import {
 import redDot from "../assets/redDot.svg";
 import blackDot from "../assets/blackDot.svg";
 
+/**
+ * Display the BarChart Activity
+ * @component
+ * @param {object} activity
+ * @returns {React.ReactElement}
+ */
+
 const BarChartActivity = ({ activity }) => {
+  /**
+   *  Custom tooltip BarChart Activity
+   * @param {boolean} active
+   * @param {array} payload
+   * @returns custom tooltip with kg and kcal
+   */
   const CustomToolTip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
