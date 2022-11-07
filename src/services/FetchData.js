@@ -22,6 +22,7 @@ export const getUserMainData = async (id) => {
     console.log("mock");
     try {
       const res = USER_MAIN_DATA.filter((data) => data.id === +id);
+      console.log(id);
       return {
         data: res[0],
       };

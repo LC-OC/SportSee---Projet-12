@@ -51,6 +51,12 @@ const Dashboard = () => {
     fetchUserSession();
     fetchUserActivity();
   }, [id]);
+
+  // Error 404 if wrong id in url mocked data
+  if ((+id !== 12) & (+id !== 18)) {
+    return <Error404 />;
+  }
+  // Error 404 if wrong id in url api
   if (userData.length === 0) {
     return <Error404 />;
   }
